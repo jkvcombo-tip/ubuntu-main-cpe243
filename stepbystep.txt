@@ -1,0 +1,42 @@
+sudo apt update
+sudo apt upgrade
+sudo apt install -y build-essential linux-headers-$(uname -r)
+r-click -> terminal >> ./sh
+
+sudo nano /etc/hosts
+sudo nano /etc/hostname 
+sudo reboot
+sudo poweroff
+
+ifconfig
+sudo apt install net-tools
+192.168.56.105 main
+192.168.56.106 server1
+
+sudo apt install openssh-server
+sudo systemctl status ssh
+sudo service ssh start /once reboot
+
+sudo ufw allow ssh /every time system start firewall enabled
+sudo ufw enable
+sudo ufw status
+
+ssh-keygen -t rsa -b 4096
+ls.ssh
+ssh-copy-id combo@192.168.56.102
+ssh-copy-id combo@192.168.56.103
+ssh-copy-id combo@192.168.56.104
+ping
+ssh combo@192.168.56.102
+ssh combo@192.168.56.103
+ssh combo@192.168.56.104
+exit
+
+Github
+sudo apt install git
+git config --global user.name "jkvcombo-tip"
+git config --global user.email qjkvcombo@tip.edu.ph
+git config --list
+https://kbroman.org/github_tutorial/pages/first_time.html
+
+
