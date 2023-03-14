@@ -32,11 +32,14 @@ ssh combo@192.168.56.103
 ssh combo@192.168.56.104
 exit
 
-Github
-sudo apt install git
-git config --global user.name "jkvcombo-tip"
-git config --global user.email qjkvcombo@tip.edu.ph
-git config --list
-https://kbroman.org/github_tutorial/pages/first_time.html
+ls .ssh
+open folder go to ssh folder
+right click open with code
+copy the ssh code
+open github create ssh and gpg keys
+and paste the key for pub keys
+
+
+
 
 

@@ -1,0 +1,134 @@
+mkdir cpe243-Ansible
+
+Github
+sudo apt install git
+git config --global user.name "jkvcombo-tip"
+git config --global user.email qjkvcombo@tip.edu.ph
+git config --list
+
+
+
+https://kbroman.org/github_tutorial/pages/first_time.html
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:jkvcombo-tip/ubuntu-main-cpe243.git
+git push -u origin main
+
+git remote add origin git@github.com:jkvcombo-tip/ubuntu-main-cpe243.git
+git branch -M main
+git push -u origin main
+
+192.168.56.105 - local machine
+mkdir cpe243-Ansible
+nano inventory
+[
+192.168.56.106
+]
+touch ansible.cfg
+[
+[defaults]
+
+
+
+inventory = inventory
+
+private_key_file = ~/.ssh/id_rsa
+
+
+]
+sudo apt install ansible
+ansible all -m apt -a update_cache=true --become --ask-become-pass
+
+ansible all -m apt -a name=vim-nox --become --ask-become-pass
+
+ansible all -m apt -a name=snapd --become --ask-become-pass
+
+ansible  all  -m  apt  -a "name=snapd state=latest" --become --ask-become-pass
+
+nano install_apache.yml
+[
+---
+
+- hosts: all
+
+  become: true
+
+  tasks:
+
+
+
+  - name: install apache2 package
+
+    apt:
+
+      name: apache2
+
+
+]
+ansible-playbook  --ask-become-pass install_apache.yml
+[
+---
+
+- hosts: all
+
+  become: true
+
+  tasks:
+
+
+
+  - name: update repository index
+
+    apt:
+
+      update_cache: yes
+
+
+
+  - name: install apache2 package
+
+    apt:
+
+      name: apache2
+
+
+]
+ansible-playbook  --ask-become-pass install_apache.yml
+[
+---
+
+- hosts: all
+
+  become: true
+
+  tasks:
+
+
+
+  - name: update repository index
+
+    apt:
+
+      update_cache: yes
+
+
+
+  - name: install apache2 package
+
+    apt:
+
+      name: apache2
+
+
+
+  - name: add PHP support for apache
+
+    apt:
+
+      name: libapache2-mod-php
+
+
+]
